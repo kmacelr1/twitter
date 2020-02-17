@@ -1,3 +1,17 @@
+# Twitter - Part II
+
+This is a basic twitter app to view, compose, favorite, and retweet tweets.
+
+Time spent: **7** hours spent in total
+
+## User Stories
+
+The following **required** functionality is completed:
+
+- [x] User can compose a tweet. (4pts)
+- [x] User can favorite a tweet. (4pts)
+- [x] User can retweet a tweet. (2pts)
+
 # Project 3 - Twitter
 
 **Name of your app** is a basic twitter app to read your tweets.
@@ -23,5 +37,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/Ec9lxgLCEu.gif' />
+<img src='http://g.recordit.co/ntlpUdc2ZT.gif' />
 
