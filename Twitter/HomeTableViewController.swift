@@ -17,13 +17,20 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweets()
+        //loadTweets()
         
         myRefreshControl.addTarget(self, action:#selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
-        
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
       
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
+    }
+    
     
     @objc func loadTweets(){
         numberOfTweets = 20
@@ -89,6 +96,11 @@ class HomeTableViewController: UITableViewController {
     }
     
     
+    
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCelltableViewCell
         
@@ -113,8 +125,9 @@ class HomeTableViewController: UITableViewController {
         
         
         
-        
-        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.setRetweet(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
         
         return cell
     }
